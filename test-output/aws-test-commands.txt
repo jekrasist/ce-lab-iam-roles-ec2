@@ -1,0 +1,6 @@
+aws sts get-caller-identity
+aws s3 ls s3://bucketlerbankasi/
+aws s3 cp s3-test.txt s3://bucketlerbankasi/
+aws logs create-log-group --log-group-name /ec2/iam-lab-test --region us-east-1
+aws logs create-log-stream --log-group-name /ec2/iam-lab-test --log-stream-name test-stream --region us-east-1
+aws logs put-log-events --log-group-name /ec2/iam-lab-test --log-stream-name test-stream --region us-east-1 --log-events timestamp=$(date +%s000),message="IAM Role verification successful"
